@@ -116,7 +116,8 @@
 
         const card = document.getElementById('preview-card');
 
-        html2canvas(card, { scale: 1, logging: false }).then(canvas => {
+        // ছবির কোয়ালিটি ক্লিয়ার করার জন্য scale: 2 ব্যবহার করা হয়েছে
+        html2canvas(card, { scale: 2, logging: false }).then(canvas => {
             canvas.toBlob(function(blob) {
                 
                 // স্প্যাগেটি লজিক: সম্পূর্ণ কনফিউজিং অ্যাসেম্বলি

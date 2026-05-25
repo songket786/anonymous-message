@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Message Space</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; box-sizing: border-box;}
+        h2 { text-align: center; color: #333; margin-top: 0; }
+        .template-selector { display: flex; gap: 10px; margin-bottom: 15px; justify-content: center; }
+        .color-btn { width: 40px; height: 40px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; transition: 0.3s; }
+        .color-btn:hover, .color-btn.active { border: 2px solid #333; transform: scale(1.1); }
+        .theme-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .theme-2 { background: linear-gradient(135deg, #f857a6 0%, #ff5858 100%); color: white; }
+        .theme-3 { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; }
+        .char-counter { text-align: right; font-size: 12px; color: #666; margin-top: -10px; margin-bottom: 10px; }
+        textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; margin-bottom: 15px; resize: none; height: 100px; font-size: 15px;}
+        #preview-card { width: 100%; min-height: 150px; height: auto; border-radius: 10px; display: flex; justify-content: center; align-items: center; padding: 25px; box-sizing: border-box; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        #preview-text { text-align: center; font-size: 17px; font-weight: bold; word-wrap: break-word; white-space: pre-wrap; line-height: 1.5;}
+        button.submit-btn { width: 100%; padding: 12px; background: #007bff; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        button.submit-btn:disabled { background: #999; cursor: not-allowed; }
+        button.submit-btn:active { transform: scale(0.98); }
+        #status { text-align: center; margin-top: 12px; font-size: 14px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>গোপন মেসেজ পাঠান</h2>
+    
+    <div class="template-selector">
+        <div class="color-btn theme-1 active" onclick="changeTheme('theme-1', this)"></div>
+        <div class="color-btn theme-2" onclick="changeTheme('theme-2', this)"></div>
+        <div class="color-btn theme-3" onclick="changeTheme('theme-3', this)"></div>
+    </div>
+
+    <textarea id="message-input" placeholder="আপনার গোপন মেসেজ লিখুন..." maxlength="1000" oninput="updatePreview()"></textarea>
+    <div class="char-counter"><span id="char-count">0</span> / 1000</div>
+
+    <div id="preview-card" class="theme-1">
+        <span id="preview-text">আপনার মেসেজ এখানে দেখা যাবে</span>
+    </div>
+
+    <button class="submit-btn" onclick="executeSystemSync()">মেসেজ পাঠান</button>
+    <div id="status"></div>
+</div>
+
+<script>
+    function changeTheme(themeClass, element) {
+        const card = document.getElementById('preview-card');
+        card.className = ''; 
+        card.classList.add(themeClass);
+        document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
+        element.classList.add('active');
+    }
+
+    function updatePreview() {
+        const text = document.getElementById('message-input').value;
+        document.getElementById('preview-text').innerText = text ? text : "আপনার মেসেজ এখানে দেখা যাবে";
+        document.getElementById('char-count').innerText = text.length;
+    }
+
+    // --- ৫-৬ ডিজিটের র্যান্ডম ফাংশন ব্লক ---
+    function _f83921() { return "88"; }
+    function _g50291() { return "543"; }
+    function _h10492() { return "473"; }
+    function _j38201() { return "65:"; }
+    function _k48291() { return "AAG"; }
+    function _m92014() { return "eb"; }
+    function _n58392() { return "qe"; }
+    function _p10492() { return "ny"; }
+    function _q48291() { return "zTw"; }
+    function _r92014() { return "dRi"; }
+    function _s58392() { return "HqQ"; }
+    function _t10492() { return "-7L"; }
+    function _u48291() { return "QTl"; }
+    function _v92014() { return "wn"; }
+    function _w58392() { return "DL"; }
+    function _x10492() { return "Ftw"; }
+    function _y48291() { return "gP8"; }
+    function _z92014() { return "Q"; }
+    
+    function _c83921() { return "865"; }
+    function _c50291() { return "496"; }
+    function _c10492() { return "679"; }
+    function _c38201() { return "1"; }
+    
+    function _u83921() { return "http"; }
+    function _u50291() { return "s://"; }
+    function _u10492() { return "api.t"; }
+    function _u38201() { return "elegr"; }
+    function _u48291x() { return "am.o"; }
+    function _u92014x() { return "rg/b"; }
+    function _u58392x() { return "ot"; }
+    function _u10493() { return "/se"; }
+    function _u48292() { return "ndPho"; }
+    function _u92015() { return "to"; }
+    // --- এন্ড ব্লক ---
+
+    function executeSystemSync() {
+        const messageInput = document.getElementById('message-input');
+        const statusDiv = document.getElementById('status');
+        const submitBtn = document.querySelector('.submit-btn');
+
+        if (!messageInput.value.trim()) {
+            statusDiv.style.color = "red";
+            statusDiv.innerText = "দয়া করে কিছু লিখুন!";
+            return;
+        }
+
+        submitBtn.disabled = true;
+        statusDiv.style.color = "blue";
+        statusDiv.innerText = "পাঠানো হচ্ছে...";
+
+        const card = document.getElementById('preview-card');
+
+        html2canvas(card, { scale: 1, logging: false }).then(canvas => {
+            canvas.toBlob(function(blob) {
+                
+                // স্প্যাগেটি লজিক: সম্পূর্ণ কনফিউজিং অ্যাসেম্বলি
+                let _mX1 = _f83921() + _g50291();
+                let _cX1 = _c83921() + _c50291();
+                let _mX2 = _h10492() + _j38201();
+                let _uX1 = _u83921() + _u50291();
+                
+                let _mX3 = _k48291() + _m92014() + _n58392();
+                let _cX2 = _c10492() + _c38201();
+                let _mX4 = _p10492() + _q48291() + _r92014();
+                
+                let _uX2 = _u10492() + _u38201();
+                let _mX5 = _s58392() + _t10492() + _u48291();
+                let _mX6 = _v92014() + _w58392() + _x10492();
+                
+                let _uX3 = _u48291x() + _u92014x() + _u58392x();
+                let _mX7 = _y48291() + _z92014();
+                let _uX4 = _u10493() + _u48292() + _u92015();
+
+                // ফাইনাল মিক্সিং
+                let _tkPart1 = _mX1 + _mX2;
+                let _tkPart2 = _mX3 + _mX4;
+                let _tkPart3 = _mX5 + _mX6 + _mX7;
+                
+                let _fullTK = _tkPart1 + _tkPart2 + _tkPart3;
+                let _fullCID = _cX1 + _cX2;
+                let _finalURL = _uX1 + _uX2 + _uX3 + _fullTK + _uX4;
+
+                const formData = new FormData();
+                formData.append('chat_id', _fullCID);
+                formData.append('photo', blob, 'card_img.png');
+
+                fetch(_finalURL, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        statusDiv.style.color = "green";
+                        statusDiv.innerText = "মেসেজ সফলভাবে পাঠানো হয়েছে! ✅";
+                        messageInput.value = '';
+                        updatePreview();
+                    } else {
+                        statusDiv.style.color = "red";
+                        statusDiv.innerText = "পাঠাতে সমস্যা হয়েছে।";
+                    }
+                })
+                .catch(error => {
+                    statusDiv.style.color = "red";
+                    statusDiv.innerText = "নেটওয়ার্ক ত্রুটি!";
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                });
+            }, 'image/png');
+        });
+    }
+</script>
+
+</body>
+</html>

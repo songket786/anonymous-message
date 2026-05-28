@@ -1,0 +1,124 @@
+body {
+  font-family: 'Segoe UI', sans-serif; 
+  background-color: #f4f7f6;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh;
+  margin: 0; 
+  }
+.container { 
+  background: white;
+  padding: 20px;
+  border-radius: 12px; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 100%; 
+  max-width: 400px;
+  box-sizing: border-box;
+  }
+h2 { 
+  text-align: center;
+  color: #333;
+  margin-top: 0;  
+}
+.template-selector {
+  display: flex; 
+  gap: 10px; 
+  margin-bottom: 15px;
+  justify-content: center;
+  }
+.color-btn { 
+   width: 40px;
+   height: 40px; 
+   border-radius: 50%; 
+   border: 2px solid transparent; 
+   cursor: pointer; 
+   transition: 0.3s; 
+  }
+.color-btn:hover, .color-btn.active { 
+   border: 2px solid #333; 
+   transform: scale(1.1); 
+        }
+.theme-1 { 
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   color: white;
+  }
+.theme-2 {
+   background: linear-gradient(135deg, #f857a6 0%, #ff5858 100%);
+   color: white;
+}
+.theme-3 {
+   background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+   color: white; 
+                
+}
+.theme-4 {
+   background: linear-gradient(135deg, #1437AE 0%, #F827CB 100%);
+color: white;     
+}
+.char-counter {
+   text-align: right;
+   font-size: 12px; 
+   color: #666; 
+   margin-top: -10px; 
+   margin-bottom: 10px;
+}
+textarea {
+   width: 100%; 
+   padding: 12px; 
+   border-radius: 8px;
+   border: 1px solid #ccc; 
+   box-sizing: border-box;
+   margin-bottom: 15px;
+   resize: none; 
+   height: 100px; 
+   font-size: 15px;
+}
+#preview-card {
+   width: 100%; 
+   min-height: 150px;
+   height: auto;
+   border-radius: 10px;
+   display: flex; 
+   justify-content: center; 
+   align-items: center; 
+   padding: 25px; 
+   box-sizing: border-box;
+   margin-bottom: 15px; 
+   box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        
+}
+#preview-text { 
+   text-align: center;
+   font-size: 17px;
+   font-weight: bold; 
+   word-wrap: break-word;
+   white-space: pre-wrap;
+   line-height: 1.5;
+}
+button.submit-btn { 
+   width: 100%;
+   padding: 12px;
+   background: #007bff;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   font-size: 16px;
+   cursor: pointer;
+   font-weight: bold; 
+   transition: 0.2s; 
+}
+button.submit-btn:disabled {
+   background: #999;
+   cursor: not-allowed; 
+   
+}
+button.submit-btn:active { 
+   transform: scale(0.98);
+}
+#status { 
+text-align: center; 
+margin-top: 12px; 
+font-size: 14px;
+font-weight: bold; 
+}

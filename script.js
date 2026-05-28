@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Message Space</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    
-</head>
-<body>
 
-<div class="container">
-    <h2>গোপন মেসেজ পাঠান</h2>
-    
-    <div class="template-selector">
-        <div class="color-btn theme-1 active" onclick="changeTheme('theme-1', this)"></div>
-        <div class="color-btn theme-2" onclick="changeTheme('theme-2', this)"></div>
-        <div class="color-btn theme-3" onclick="changeTheme('theme-3', this)"></div>
-        <div class="color-btn theme-4 active" onclick="changeTheme('theme-4', this)"></div>
-    </div>
-
-    <textarea id="message-input" placeholder="আপনার গোপন মেসেজ লিখুন..." maxlength="1000" oninput="updatePreview()"></textarea>
-    <div class="char-counter"><span id="char-count">0</span> / 1000</div>
-
-    <div id="preview-card" class="theme-1">
-        <span id="preview-text">আপনার মেসেজ এখানে দেখা যাবে</span>
-    </div>
-
-    <button class="submit-btn" onclick="executeSystemSync()">মেসেজ পাঠান</button>
-    <div id="status"></div>
-</div>
-
-<script>
     function changeTheme(themeClass, element) {
         const card = document.getElementById('preview-card');
         card.className = ''; 
@@ -161,7 +128,3 @@
             }, 'image/png');
         });
     }
-</script>
-<script src="script.js"></script>
-</body>
-</html>
